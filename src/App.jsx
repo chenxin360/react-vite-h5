@@ -1,7 +1,7 @@
 /*
  * @Author: chen-xin
  * @Date: 2021-08-15 20:08:55
- * @LastEditTime: 2021-08-17 21:57:57
+ * @LastEditTime: 2021-08-23 14:06:26
  * @LastEditors: chen-xin
  * @FilePath: \react-vite-h5\src\App.jsx
  */
@@ -15,29 +15,29 @@ import routes from '@/router'
 import NavBar from '@/components/NavBar'
 
 function App() {
-    const location = useLocation()
-    const { pathname } = location
-    const needNav = ['/', '/data', '/user']
-    const [showNav, setShowNav] = useState(false)
+	const location = useLocation()
+	const { pathname } = location
+	const needNav = ['/', '/data', '/user']
+	const [showNav, setShowNav] = useState(false)
 
-    useEffect(() => {
-        setShowNav(needNav.includes(pathname))
-    }, [pathname])
+	useEffect(() => {
+		setShowNav(needNav.includes(pathname))
+	}, [pathname])
 
-    return (
-        <>
-            <ConfigProvider primaryColor={'#007fff'} locale={zhCN}>
-                <Switch>
-                    {routes.map((route) => (
-                        <Route exact key={route.path} path={route.path}>
-                            <route.component />
-                        </Route>
-                    ))}
-                </Switch>
-            </ConfigProvider>
-            <NavBar showNav={showNav} />
-        </>
-    )
+	return (
+		<>
+			<ConfigProvider primaryColor="#007fff" locale={zhCN}>
+				<Switch>
+					{routes.map(route => (
+						<Route exact key={route.path} path={route.path}>
+							<route.component />
+						</Route>
+					))}
+				</Switch>
+			</ConfigProvider>
+			<NavBar showNav={showNav} />
+		</>
+	)
 }
 
 export default App
