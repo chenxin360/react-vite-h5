@@ -9,10 +9,10 @@ import React, { useState, useCallback } from 'react'
 import { Cell, Input, Button, Checkbox, Toast } from 'zarm'
 import Captcha from 'react-captcha-code'
 import cx from 'classnames'
+import { useHistory } from 'react-router-dom'
 import CustomIcon from '@/components/CustomIcon'
 import style from './style.module.less'
 import { post } from '@/utils'
-import { useHistory } from 'react-router-dom'
 
 const Login = () => {
 	const [username, setUsername] = useState('') // 账号
