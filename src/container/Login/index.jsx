@@ -51,7 +51,7 @@ const Login = () => {
 				if (data && data.token) {
 					localStorage.setItem('token', data.token)
 					console.log(history)
-					history.push('/data')
+					history.push('/')
 				}
 			} else {
 				if (!verify) {
